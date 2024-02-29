@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ComicController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,3 +53,10 @@ Route::get('/chi-siamo', function () {
 });
 
 // Route::get(PERCORSO CON CUI ARRIVARE ALLA PAGINA, FUNZIONE DI CALLBACK CHE MI CREA LA RISPOSTA DA DARE ALL UTENTE)
+
+Route::resource('comics', ComicController::class);
+
+Route::get('comics', 'ComicController@index')->name('comics.index');
+Route::get('comics/create', 'ComicController@create')->name('comics.create');
+Route::post('comics', 'ComicController@store')->name('comics.store');
+Route::get('comics/{comic}', 'ComicController@show')->name('comics.show');
