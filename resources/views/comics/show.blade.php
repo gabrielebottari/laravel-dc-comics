@@ -58,11 +58,11 @@
                 <tbody>
                   <tr class="table-light">
                     <td class="w-25">Art by:</td>
-                    <td class="names">{{ implode(",",$comic["artists"]) }}</td>
+                    <td class="names">{{ is_array($comic["artists"]) ? implode(", ", $comic["artists"]) : $comic["artists"] }}</td>
                   </tr>
                   <tr class="table-light">
                     <td>Written by:</td>
-                    <td class="names">{{ implode(", ",$comic["writers"]) }}</td>
+                    <td class="names">{{ is_array($comic["writers"]) ? implode(", ", $comic["writers"]) : $comic["writers"] }}</td>
                   </tr>
                 </tbody>
               </table>
