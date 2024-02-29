@@ -15,6 +15,7 @@ use App\Http\Controllers\ComicController;
 |
 */
 
+/*
 Route::get('/', function () {
     $firstName = 'Gino';
     $lastName = 'Paoli';
@@ -41,6 +42,7 @@ Route::get('/', function () {
     */
     // dd(compact('firstName', 'lastName'));
 
+    /*
     return view('welcome', [
         'firstName' => $firstName,
         'lastName' => $lastName,
@@ -51,12 +53,15 @@ Route::get('/', function () {
 Route::get('/chi-siamo', function () {
     return view('subpages.about');
 });
+*/
 
 // Route::get(PERCORSO CON CUI ARRIVARE ALLA PAGINA, FUNZIONE DI CALLBACK CHE MI CREA LA RISPOSTA DA DARE ALL UTENTE)
 
 Route::resource('comics', ComicController::class);
 
-Route::get('comics', 'ComicController@index')->name('comics.index');
+Route::get('/', [ComicController::class, 'index'])->name('comics.index');
+
+//Route::get('comics', 'ComicController@index')->name('comics.index');
 Route::get('comics/create', 'ComicController@create')->name('comics.create');
 Route::post('comics', 'ComicController@store')->name('comics.store');
 Route::get('comics/{comic}', 'ComicController@show')->name('comics.show');
