@@ -8,7 +8,7 @@
         <div class="container main-container">
             <h1>Current Series</h1>
             <div class="row gy-3">
-                @foreach(config('comics') as $comic)
+                @foreach ($comics as $comic)
                 <div class="col-2">
                     <div class="card">
                         <a href="{{ route('comics.show', ['comic' => $comic->id]) }}">
@@ -25,6 +25,7 @@
             <div class="button-container pt-3">
                 <button>Load More</button>
             </div>
+
         </div>
     </div>
 
