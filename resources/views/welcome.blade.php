@@ -2,7 +2,7 @@
 
 @section('page-title', 'Home')
 
-@section('main-content')
+@section('content')
 <h1>
     Laravel Start 1
 </h1>

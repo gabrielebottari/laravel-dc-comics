@@ -19,6 +19,7 @@ use App\Http\Controllers\ComicController;
 Route::get('/', function () {
     $firstName = 'Gino';
     $lastName = 'Paoli';
+*/
 
     /*
         compact: crea un array associativo le cui chiavi sono le stringhe
@@ -42,7 +43,8 @@ Route::get('/', function () {
     */
     // dd(compact('firstName', 'lastName'));
 
-    /*
+/*
+    
     return view('welcome', [
         'firstName' => $firstName,
         'lastName' => $lastName,
@@ -55,16 +57,17 @@ Route::get('/chi-siamo', function () {
 });
 */
 
+
 // Route::get(PERCORSO CON CUI ARRIVARE ALLA PAGINA, FUNZIONE DI CALLBACK CHE MI CREA LA RISPOSTA DA DARE ALL UTENTE)
+
 
 Route::resource('comics', ComicController::class);
 
+// Route che punta al metodo index del ComicController
 Route::get('/', [ComicController::class, 'index'])->name('comics.index');
 
-//Route::get('comics', 'ComicController@index')->name('comics.index');
-Route::get('comics/create', 'ComicController@create')->name('comics.create');
-Route::post('comics', 'ComicController@store')->name('comics.store');
-Route::get('comics/{comic}', 'ComicController@show')->name('comics.show');
+// Route che utilizza il Route Model Binding per il metodo show
+Route::get('/{comic}', [ComicController::class, 'show'])->name('comics.show');
 
 Route::get('/characters', function () {
     return view('characters');
