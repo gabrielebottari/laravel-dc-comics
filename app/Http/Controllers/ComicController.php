@@ -53,4 +53,11 @@ class ComicController extends Controller
     {
         return view('comics.edit', compact('comic'));
     }
+
+    public function destroy(Comic $comic)
+    {
+        $comic->delete();
+
+        return redirect()->route('comics.index')->with('success', 'Comic deleted successfully!');
+    }
 }

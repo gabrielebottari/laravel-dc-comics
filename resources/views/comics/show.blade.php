@@ -46,13 +46,23 @@
             </div>
         </div>
 
-        <div class="container p-5 m-auto">
-            <button class="btn btn-primary rounded-0">
-                <a href="{{ route('comics.edit', $comic->id) }}" class="text-white text-decoration-none">Edit</a>
-            </button>
+        <div class="info-box container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="container py-5 m-auto d-flex justify-content-between">
+                        <button class="btn btn-primary rounded-0">
+                            <a href="{{ route('comics.edit', $comic->id) }}" class="text-white text-decoration-none fw-semibold">Edit <i class="fa-solid fa-pen"></i></a>
+                        </button>
             
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger rounded-0 fw-semibold">Delete Comic <i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
 
         <div class="details-bottom bg-light">
             <div class="info-box container">

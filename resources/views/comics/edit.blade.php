@@ -11,7 +11,7 @@
       <h1 class="text-white mb-3">Update Comic</h1>
 
 
-      <form action="{{ route('comics.update', $comic->id) }}" method="POST" class="text-white fw-semibold">
+      <form action="{{ route('comics.update', $comic->id) }}" method="POST" class="text-white fw-semibold rounded-0">
             @csrf
             @method('PUT')
 
@@ -62,10 +62,10 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <a href="{{ route('comics.index')}}" title="Go back" class="btn btn-primary text-white"><i class="fa-solid fa-left-long"></i></a>
+                    <a href="{{ route('comics.index')}}" title="Go back" class="btn btn-primary text-white rounded-0"><i class="fa-solid fa-left-long"></i></a>
                 </div>
 
-                <button type="submit" class="btn btn-success mt-2">Update Comic</button>
+                <button type="submit" class="btn btn-success mt-2 rounded-0">Update <i class="fa-solid fa-pen"></i></button>
             </div>
 
         </form>

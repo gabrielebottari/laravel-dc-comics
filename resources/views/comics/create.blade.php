@@ -11,7 +11,7 @@
       <h1 class="text-white mb-3">Add new Comic</h1>
 
 
-      <form action="{{ route('comics.store') }}" method="POST" class="text-white fw-semibold">
+      <form action="{{ route('comics.store') }}" method="POST" class="text-white fw-semibold rounded-0">
             @csrf
 
             <div class="mb-3">
@@ -61,10 +61,10 @@
 
             <div class="d-flex justify-content-between">
               <div>
-                <a href="{{ route('comics.index')}}" title="Go back" class="btn btn-primary text-white"><i class="fa-solid fa-left-long"></i></a>
+                <a href="{{ route('comics.index')}}" title="Go back" class="btn btn-primary text-white rounded-0"><i class="fa-solid fa-left-long"></i></a>
               </div>
 
-              <button type="submit" class="btn btn-success mt-2">Add</button>
+              <button type="submit" class="btn btn-success mt-2 rounded-0">Add <i class="fa-solid fa-plus"></i></button>
             </div>
 
         </form>
