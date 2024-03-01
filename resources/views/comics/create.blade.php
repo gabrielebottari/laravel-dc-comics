@@ -16,22 +16,22 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                <input id="title" class="form-control" name="title" placeholder="Title" type="text" value="{{ old('title') }}">
+                <input id="title" class="form-control" name="title" placeholder="Title" type="text" value="">
             </div>
 
             <div class="mb-3">
                 <label for="series" class="form-label">Series <span class="text-danger">*</span></label>
-                <input id="series" class="form-control" name="series" placeholder="Series" type="text" value="{{ old('series') }}">
+                <input id="series" class="form-control" name="series" placeholder="Series" type="text" value="">
             </div>
 
             <div class="mb-3">
                 <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
-                <input id="type" class="form-control" name="type" placeholder="Type" type="text" value="{{ old('type') }}">
+                <input id="type" class="form-control" name="type" placeholder="Type" type="text" value="">
             </div>
 
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Sale Date <span class="text-danger">*</span></label>
-                <input type="date" id="sale_date" class="form-control" name="sale_date" placeholder="Sale Date" type="text" value="">
+                <input type="date" id="sale_date" class="form-control" name="sale_date" placeholder="yyyy/mm/dd" type="text" value="">
             </div>
 
             <div class="mb-3">

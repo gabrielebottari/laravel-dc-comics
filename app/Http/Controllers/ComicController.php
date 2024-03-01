@@ -40,4 +40,17 @@ class ComicController extends Controller
     
         return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
+
+    public function update(Request $request, Comic $comic)
+    {
+        $comicData = $request->only(['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type']);
+        $comic->update($comicData);
+    
+        return redirect()->route('comics.index')->with('success', 'Comic updated successfully!');
+    }
+
+    public function edit(Comic $comic)
+    {
+        return view('comics.edit', compact('comic'));
+    }
 }
