@@ -36,6 +36,8 @@ class ComicController extends Controller
         $comic->series = $comicData['series'];
         $comic->sale_date = $comicData['sale_date'];
         $comic->type = $comicData['type'];
+        $comic ->artists = $comicData['artists'];
+        $comic ->writers = $comicData['writers'];
         $comic->save();
     
         return redirect()->route('comics.show', ['comic' => $comic->id]);
@@ -43,7 +45,7 @@ class ComicController extends Controller
 
     public function update(Request $request, Comic $comic)
     {
-        $comicData = $request->only(['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type']);
+        $comicData = $request->only(['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type', 'artists', 'writers']);
         $comic->update($comicData);
     
         return redirect()->route('comics.index')->with('success', 'Comic updated successfully!');

@@ -18,6 +18,11 @@ $primary-color : #0C7CEC;
 $secondary-color : #303030;
 
 header {
+
+    .bg-header-top {
+        background-color: $primary-color;
+    }
+    
     .top-header {
         max-width: 1400px;
         margin: 0 auto;

@@ -10,3 +10,18 @@ import * as bootstrap from 'bootstrap';
 import.meta.glob([
     '../img/**'
 ]);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const confirmed = confirm('Are you sure you want to delete this comic?');
+
+            if (confirmed) {
+                this.form.submit();
+            }
+        });
+    });
+});

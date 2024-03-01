@@ -49,7 +49,7 @@
 
 <header>
 
-    <div class="bg-primary">
+    <div class="bg-header-top">
         <div class="d-flex justify-content-end text-white p-1 top-header">
             <div class="me-5">
                 DC POWER VISA

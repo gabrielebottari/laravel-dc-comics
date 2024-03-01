@@ -23,7 +23,7 @@
             </div>
 
             <div class="button-container pt-3">
-                <button><a href="{{ route('comics.create') }}" class="text-white text-decoration-none">Load More</a></button>
+                <button><a href="{{ route('comics.create') }}" class="text-white text-decoration-none">Load New Comic <i class="fa-solid fa-plus"></i></a></button>
             </div>
 
         </div>
