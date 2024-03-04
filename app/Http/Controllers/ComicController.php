@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
+
 class ComicController extends Controller
 {
     public function index()
@@ -24,26 +27,15 @@ class ComicController extends Controller
         return view('comics.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $comicData = $request -> all();
-
-        $comic = new Comic();
-        $comic->title = $comicData['title'];
-        $comic->description = $comicData['description'];
-        $comic->thumb = $comicData['thumb'];
-        $comic->price = $comicData['price'];
-        $comic->series = $comicData['series'];
-        $comic->sale_date = $comicData['sale_date'];
-        $comic->type = $comicData['type'];
-        $comic ->artists = $comicData['artists'];
-        $comic ->writers = $comicData['writers'];
+        $comic = new Comic($request->all());
         $comic->save();
     
         return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
         $comicData = $request->only(['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type', 'artists', 'writers']);
         $comic->update($comicData);
